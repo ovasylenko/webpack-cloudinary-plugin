@@ -1,0 +1,35 @@
+{
+  "name": "webpack-cloudinary-plugin",
+  "version": "1.0.0",
+  "description": "Upload your Webpack-generated assets to Cloudinary",
+  "main": "index.js",
+  "scripts": {
+    "test": "babel-node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arrudaje/webpack-cloudinary-plugin.git"
+  },
+  "keywords": [
+    "cloudinary",
+    "webpack",
+    "plugin",
+    "upload",
+    "images",
+    "assets"
+  ],
+  "author": "João Arruda <arrudaje@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arrudaje/webpack-cloudinary-plugin/issues"
+  },
+  "homepage": "https://github.com/arrudaje/webpack-cloudinary-plugin#readme",
+  "dependencies": {
+    "cloudinary": "^1.17.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/node": "^7.7.4",
+    "@babel/preset-env": "^7.7.4"
+  }
+}
