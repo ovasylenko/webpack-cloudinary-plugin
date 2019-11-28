@@ -1,3 +1,5 @@
+"use strict";
+
 export class WebpackCloudinaryPlugin {
     apply(compiler) {
         compiler.hooks.done.tapAsync(

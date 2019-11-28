@@ -4,7 +4,7 @@
   "description": "Upload your Webpack-generated assets to Cloudinary",
   "main": "index.js",
   "scripts": {
-    "test": "babel-node test/test.js"
+    "test": "mocha test/test.js --require @babel/register"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,11 @@
   "devDependencies": {
     "@babel/core": "^7.7.4",
     "@babel/node": "^7.7.4",
-    "@babel/preset-env": "^7.7.4"
+    "@babel/preset-env": "^7.7.4",
+    "css-loader": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "mocha": "^6.2.2",
+    "style-loader": "^1.0.1",
+    "webpack": "^4.41.2"
   }
 }
