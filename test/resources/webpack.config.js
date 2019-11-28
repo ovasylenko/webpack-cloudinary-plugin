@@ -1,5 +1,6 @@
 import { WebpackCloudinaryPlugin } from "../../index";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { CleanWebpackPlugin } from "clean-webpack-plugin";
 
 module.exports = {
     mode: "development",
@@ -14,6 +15,7 @@ module.exports = {
 
     plugins: [
         new WebpackCloudinaryPlugin(),
+        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin()
     ],
 

@@ -5,11 +5,10 @@ describe("Plugin test", () => {
     it("should load", (done) => {
         webpack(webpackOptions, (error, stats) => {
             if (error) {
-                console.log(error);
                 done(error);
             }
 
             done();
-        })
+        });
     });
 });
