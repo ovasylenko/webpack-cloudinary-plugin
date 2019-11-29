@@ -4,8 +4,8 @@ import webpackOptions from "./resources/webpack.config";
 describe("Plugin test", () => {
     it("should load", (done) => {
         webpack(webpackOptions, (error, stats) => {
-            if (error) {
-                done(error);
+            if (stats.compilation.errors.length) {
+                done(stats.compilation.errors[0]);
             }
 
             done();

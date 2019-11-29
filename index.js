@@ -1,8 +1,16 @@
 "use strict";
 
+import isEmpty from "lodash/isEmpty";
+
 export class WebpackCloudinaryPlugin {
-    constructor(options) {
-        this.options = options;
+    get defaultOptions() {
+        return {
+
+        }
+    }
+
+    constructor(options = {}) {
+        this.options = Object.assign(options, this.defaultOptions);
     }
 
     apply(compiler) {
@@ -15,11 +23,16 @@ export class WebpackCloudinaryPlugin {
                 const compilation = stats.compilation;
 
                 if (!Object.keys(compilation.assets)) {
-                    console.error("No files were found in the dist folder.");
-                    return callback();
+                    compilation.errors.push(new Error("WebpackCloudinaryPlugin: No files were found in the dist folder."));
                 }
 
-                const output = compilation.compiler.outputPath;
+                if (isEmpty(this.options.credentials)) {
+                    compilation.errors.push(new Error("WebpackCloudinaryPlugin: Cloudinary credentials were not provided."));
+                }
+
+                if(!compilation.errors.length) {
+                    const output = compilation.compiler.outputPath;
+                }
 
                 callback();
             }

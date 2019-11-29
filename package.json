@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/arrudaje/webpack-cloudinary-plugin#readme",
   "dependencies": {
-    "cloudinary": "^1.17.0"
+    "cloudinary": "^1.17.0",
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
