@@ -1,6 +1,7 @@
 "use strict";
 
 import isEmpty from "lodash/isEmpty";
+import cloudinary from "cloudinary";
 
 export class WebpackCloudinaryPlugin {
     get defaultOptions() {
@@ -31,7 +32,10 @@ export class WebpackCloudinaryPlugin {
                 }
 
                 if(!compilation.errors.length) {
+                    cloudinary.config(this.options.credentials);
                     const output = compilation.compiler.outputPath;
+
+                    console.log(output);
                 }
 
                 callback();
