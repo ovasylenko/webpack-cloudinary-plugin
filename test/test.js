@@ -9,8 +9,8 @@ describe("Plugin test", () => {
 
     describe("Test load", () => {
         before(() => {
-            sinon.stub(cloudinary, "config");
-            uploadStub = sinon.stub(cloudinary.uploader, "upload");
+            sinon.stub(cloudinary.v2, "config");
+            uploadStub = sinon.stub(cloudinary.v2.uploader, "upload");
         });
 
         it("should load without errors if config is correct", done => {
@@ -32,7 +32,7 @@ describe("Plugin test", () => {
     describe("Test data", () => {
         beforeEach(() => {
             if(uploadStub) uploadStub.restore();
-            uploadStub = sinon.stub(cloudinary.uploader, "upload");
+            uploadStub = sinon.stub(cloudinary.v2.uploader, "upload");
         });
 
         it("should call upload the right amount of times", done => {

@@ -21,9 +21,6 @@ export class WebpackCloudinaryPlugin {
         compiler.hooks.done.tapAsync(
             PLUGIN_NAME,
             (stats, callback) => {
-                // console.log('This is an example plugin!');
-                // console.log('Here’s the `compilation` object which represents a single build of assets:', compilation);
-
                 const compilation = stats.compilation;
 
                 if (!Object.keys(compilation.assets)) {
@@ -36,7 +33,7 @@ export class WebpackCloudinaryPlugin {
 
                 if (!compilation.errors.length) {
                     try {
-                        cloudinary.config(this.options.credentials);
+                        cloudinary.v2.config(this.options.credentials);
 
                         const uploadEntries = [];
 
@@ -49,7 +46,7 @@ export class WebpackCloudinaryPlugin {
                                 uploadEntries.push(
                                     cloudinary.v2.uploader.upload(
                                         value.existsAt,
-                                        {...this.options, ...{public_id: `${this.options.remote}${key}`}},
+                                        {...this.options, public_id: `${this.options.remote}${key}`},
                                         (result, error) => 
                                             (result.error || error) 
                                             && compilation.errors.push(
