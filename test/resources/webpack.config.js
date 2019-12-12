@@ -19,7 +19,8 @@ module.exports = {
                 cloud_name: "testCloud",
                 api_key: "12345",
                 api_secret: "54321"
-            }
+            },
+            remote: "static"
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin()
