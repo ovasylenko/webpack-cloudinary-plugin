@@ -44,8 +44,8 @@ describe("Plugin test", () => {
 
         it("should call upload with the right arguments", done => {
             webpack(webpackOptions, stats => {
-                uploadStub.firstCall.calledWithMatch(/main\.css/, sinon.match.has("public_id", "static/main.css"));
-                uploadStub.secondCall.calledWithMatch(/main\.js/, sinon.match.has("public_id", "static/main.js"));
+                uploadStub.firstCall.calledWithMatch(/main\.css$/, sinon.match.has("public_id", "static/main.css"));
+                uploadStub.secondCall.calledWithMatch(/main\.js$/, sinon.match.has("public_id", "static/main.js"));
                 done();
             });
         });
