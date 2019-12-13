@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Upload your Webpack-generated assets to Cloudinary",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "build": "webpack-cli --config test/resources/webpack.config.js",
     "test": "mocha test/test.js --require @babel/register"
   },
   "repository": {
@@ -32,12 +34,14 @@
     "@babel/core": "^7.7.4",
     "@babel/node": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
+    "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
     "mocha": "^6.2.2",
     "sinon": "^7.5.0",
     "style-loader": "^1.0.1",
-    "webpack": "^4.41.2"
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   }
 }

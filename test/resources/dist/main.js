@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _module_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./module.js */ \"./module.js\");\n/* harmony import */ var _module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./module.css */ \"./module.css\");\n/* harmony import */ var _module_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_module_css__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\nnew _module_js__WEBPACK_IMPORTED_MODULE_0__[\"Module\"]();\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _module_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./module.js */ \"./module.js\");\n/* harmony import */ var _module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./module.css */ \"./module.css\");\n/* harmony import */ var _module_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_module_css__WEBPACK_IMPORTED_MODULE_1__);\n\n\nnew _module_js__WEBPACK_IMPORTED_MODULE_0__[\"Module\"]();\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
@@ -117,7 +117,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./modu
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Module\", function() { return Module; });\nclass Module {\n    \n}\n\n//# sourceURL=webpack:///./module.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Module\", function() { return Module; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Module = function Module() {\n  _classCallCheck(this, Module);\n};\n\n//# sourceURL=webpack:///./module.js?");
 
 /***/ })
 

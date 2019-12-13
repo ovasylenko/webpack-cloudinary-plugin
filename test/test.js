@@ -14,7 +14,7 @@ describe("Plugin test", () => {
         });
 
         it("should load without errors if config is correct", done => {
-            webpack(webpackOptions, stats => {
+            webpack(webpackOptions, (error, stats) => {
                 if (stats.compilation.errors.length) {
                     done(stats.compilation.errors[0]);
                     return;
@@ -36,14 +36,14 @@ describe("Plugin test", () => {
         });
 
         it("should call upload the right amount of times", done => {
-            webpack(webpackOptions, stats => {
+            webpack(webpackOptions, (error, stats) => {
                 assert.equal(uploadStub.callCount, 2);
                 done();
             });
         });
 
         it("should call upload with the right arguments", done => {
-            webpack(webpackOptions, stats => {
+            webpack(webpackOptions, (error, stats) => {
                 uploadStub.firstCall.calledWithMatch(/main\.css$/, sinon.match.has("public_id", "static/main.css"));
                 uploadStub.secondCall.calledWithMatch(/main\.js$/, sinon.match.has("public_id", "static/main.js"));
                 done();

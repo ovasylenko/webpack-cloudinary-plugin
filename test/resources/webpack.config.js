@@ -1,16 +1,16 @@
-import { WebpackCloudinaryPlugin } from "../../index";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
+var { WebpackCloudinaryPlugin } = require("../../index");
+var MiniCssExtractPlugin = require("mini-css-extract-plugin");
+var { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
     mode: "development",
 
-    context: `${__dirname}/mocks`,
+    context: __dirname + "/mocks",
 
     entry: "./index.js",
 
     output: {
-        path: `${__dirname}/dist`
+        path: __dirname + "/dist"
     },
 
     plugins: [
@@ -20,6 +20,11 @@ module.exports = {
                 api_key: "12345",
                 api_secret: "54321"
             },
+            // credentials: {
+            //     cloud_name: "arrudaje",
+            //     api_key: "769927518764481",
+            //     api_secret: "1qcVPHYDJaP0NQCUBEQGkVEJ_Js"
+            // },
             remote: "static"
         }),
         new CleanWebpackPlugin(),
@@ -34,6 +39,10 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     "css-loader"
                 ]
+            },
+            {
+                test: /\.js$/i,
+                use: "babel-loader"
             }
         ]
     }

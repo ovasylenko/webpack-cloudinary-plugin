@@ -1,12 +1,12 @@
 "use strict";
 
-import isEmpty from "lodash/isEmpty";
-import cloudinary from "cloudinary";
-import { FileNotFoundError, AbsentCredentialsError, GeneralError } from "./lib/errors";
+const isEmpty = require("lodash/isEmpty");
+const cloudinary = require("cloudinary");
+const { FileNotFoundError, AbsentCredentialsError, GeneralError } = require("./lib/errors");
 
 const PLUGIN_NAME = "WebpackCloudinaryPlugin";
 
-export class WebpackCloudinaryPlugin {
+class WebpackCloudinaryPlugin {
     get defaultOptions() {
         return {
 
@@ -48,24 +48,33 @@ export class WebpackCloudinaryPlugin {
                                         value.existsAt,
                                         {...this.options, public_id: `${this.options.remote}${key}`},
                                         (result, error) => 
-                                            (result.error || error) 
-                                            && compilation.errors.push(
+                                            ((result && result.error) || error) && compilation.errors.push(
                                                 new GeneralError("CloudinaryUploadError", PLUGIN_NAME, "File has not been uploaded to Cloudinary.")
                                             )
                                     )
                                 );
                             });
 
-                            Promise.all(uploadEntries).then(() => callback(stats));
+                            Promise.all(uploadEntries)
+                                .then(() => callback())
+                                .catch(error => {
+                                    compilation.errors.push(
+                                        new GeneralError("CloudinaryUploadError", PLUGIN_NAME, error.message)
+                                    );
+                                    callback();
+                                });
 
                     } catch (error) {
+                        console.log(error)
                         compilation.errors.push(new GeneralError("Error", PLUGIN_NAME, JSON.stringify(error)));
-                        callback(stats);
+                        callback();
                     }
                 } else {
-                    callback(stats);
+                    callback();
                 }
             }
         )
     }
 }
+
+module.exports = { WebpackCloudinaryPlugin };
