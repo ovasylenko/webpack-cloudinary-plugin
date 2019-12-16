@@ -9,7 +9,8 @@ const PLUGIN_NAME = "WebpackCloudinaryPlugin";
 class WebpackCloudinaryPlugin {
     get defaultOptions() {
         return {
-
+            remote: "",
+            resource_type: 'auto'
         }
     }
 
@@ -43,14 +44,17 @@ class WebpackCloudinaryPlugin {
                                 const key = asset[0];
                                 const value = asset[1];
 
+                                if (this.options.remote.endsWith("/")) this.options.remote = this.options.remote.slice(0, -1);
+
                                 uploadEntries.push(
                                     cloudinary.v2.uploader.upload(
                                         value.existsAt,
-                                        {...this.options, public_id: `${this.options.remote}${key}`},
-                                        (result, error) => 
-                                            ((result && result.error) || error) && compilation.errors.push(
-                                                new GeneralError("CloudinaryUploadError", PLUGIN_NAME, "File has not been uploaded to Cloudinary.")
+                                        {...this.options, public_id: `${this.options.remote ? `${this.options.remote}/` : ""}${key}`},
+                                        error => {
+                                            error && compilation.errors.push(
+                                                new GeneralError("CloudinaryUploadError", PLUGIN_NAME, `File has not been uploaded to Cloudinary. \n ${JSON.stringify(error)}`)
                                             )
+                                        }
                                     )
                                 );
                             });

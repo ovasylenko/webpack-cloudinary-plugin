@@ -19,13 +19,7 @@ module.exports = {
                 cloud_name: "testCloud",
                 api_key: "12345",
                 api_secret: "54321"
-            },
-            // credentials: {
-            //     cloud_name: "arrudaje",
-            //     api_key: "769927518764481",
-            //     api_secret: "1qcVPHYDJaP0NQCUBEQGkVEJ_Js"
-            // },
-            remote: "static"
+            }
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin()
