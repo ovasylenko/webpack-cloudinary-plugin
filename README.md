@@ -6,6 +6,8 @@ This plugin taps into the final phase of your [Webpack](http://webpack.js.org/) 
 ## Install
 ```npm i --save-dev webpack-cloudinary-plugin```
 
+```yarn add webpack-cloudinary-plugin```
+
 ## Usage
 ### **Options**
 
