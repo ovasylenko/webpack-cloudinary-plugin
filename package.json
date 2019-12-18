@@ -1,5 +1,5 @@
 {
-  "name": "@arrudaje/webpack-cloudinary-plugin",
+  "name": "webpack-cloudinary-plugin",
   "version": "0.1.2-beta",
   "description": "Upload your Webpack-generated assets to Cloudinary",
   "main": "index.js",
