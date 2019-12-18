@@ -1,6 +1,6 @@
 {
-  "name": "webpack-cloudinary-plugin",
-  "version": "0.1.0-beta",
+  "name": "@arrudaje/webpack-cloudinary-plugin",
+  "version": "0.1.2-beta",
   "description": "Upload your Webpack-generated assets to Cloudinary",
   "main": "index.js",
   "type": "module",
@@ -20,9 +20,6 @@
     "images",
     "assets"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "author": "João Arruda <arrudaje@gmail.com>",
   "license": "MIT",
   "bugs": {
@@ -46,5 +43,8 @@
     "style-loader": "^1.0.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
