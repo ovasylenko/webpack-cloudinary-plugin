@@ -1,6 +1,6 @@
 {
   "name": "webpack-cloudinary-plugin",
-  "version": "0.1.2-beta",
+  "version": "0.1.3-beta",
   "description": "Upload your Webpack-generated assets to Cloudinary",
   "main": "index.js",
   "type": "module",
