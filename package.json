@@ -20,6 +20,9 @@
     "images",
     "assets"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "author": "João Arruda <arrudaje@gmail.com>",
   "license": "MIT",
   "bugs": {
